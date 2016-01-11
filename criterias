@@ -1,1 +1,9 @@
-1-non connecting to data base from domain
+1-not connecting to data base from domain
+
+2-not connecting to sql///check
+
+3-we have to change configuration for the previous error//////uncheck
+
+4-using get or post or ajax////uncheck--->solved by session
+
+
