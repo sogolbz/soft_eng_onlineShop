@@ -12,7 +12,7 @@
 
     <title>Signin Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->a
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -30,21 +30,19 @@
 <link href="bootstrap-rtl.min.css" rel="stylesheet" />
     <script src="JQuery.js"></script>
       <script>
-         
-          function myfunction1()
-          {
-          
-               window.alert('ثبت نام با موفقیت انجام شد');
+
+          function myfunction1() {
+
+              window.alert('ثبت نام با موفقیت انجام شد');
+              window.location.href = "AdminDashboard.aspx";
+          }
+          function myfunction2() {
+              window.alert('ثبت نام با موفقیت انجام شد');
               window.location.href = "UserDashboard.aspx";
           }
-              function myfunction2()
-          {
-             window.alert('ثبت نام با موفقیت انجام شد');
-          window.location.href = "AdminDashboard.aspx";
-          }
 
-             
-          
+
+
 
       </script>
   </head>
@@ -53,21 +51,31 @@
 
     <div class="container">
 
-      <form class="form-signin">
+        <form id="form1" runat="server">
           <!-------------------->
           <span>
-              <h2 class="form-signin-heading">اگر ادمین هستیداز اینجا ثبت نام کنید</h2>
+              <h2 class="form-signin-heading">
+                  
+                  اگر کاربر هستیداز اینجا ثبت نام کنید
+                
+                  
+                  
+                  
+                
+                  
+                  
+            </h2>
             <label for="inputEmail" class="sr-only">آدرس ایمیل</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">گذر واژه</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+               <asp:TextBox ID="email" name="email" runat="server" placeholder="Email Address"></asp:TextBox>
+            <label for="inputPassword" class="sr-only"type="email" id="inputEmail" class="form-control" placeholder="Email address">گذر واژه</label>
+                <asp:TextBox ID="pass" name="pass" type="password" runat="server"  placeholder="password"></asp:TextBox>
+      
        
         <label for="inputEmail" class="sr-only">نام</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="نام" required autofocus>
+          <asp:TextBox ID="name" name="name"  runat="server"  placeholder="name"></asp:TextBox>
       
-           <label for="inputEmail" class="sr-only">تاریخ تولد</label>
-        <input type="date" id="inputEmail" class="form-control" placeholder="تاریخ تولد" required autofocus>
-         
+            
+      
            <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> عضویت در خبرنامه
@@ -77,6 +85,17 @@
           <label>
             <input type="checkbox" value="remember-me"> مرا به خاطرت نگه دار
           </label>
+              <asp:Button ID="costomer_reg" runat="server" Text="ثبت نام" OnClick="costomer_reg_Click" />
+               
+               
+          <span>
+                 <label>
+               
+               </label>
+              </span>
+              
+               
+               
                <hr />
              
                <br />
@@ -87,40 +106,39 @@
                
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="button" onclick="myfunction2()">ثبت نام</button>
-      
               </span>
           <!------------------>
           <hr />
           <span>
         <h2 class="form-signin-heading">اگر کاربر هستید  ازینجا ثبت نام کنید</h2>
         <label for="inputEmail" class="sr-only">آدرس ایمیل</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">گذر واژه</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              <asp:TextBox ID="TextBox1" runat="server" placeholder="email address"></asp:TextBox>
+         <label for="inputPassword" class="sr-only">گذر واژه</label>
+              <asp:TextBox ID="TextBox2" runat="server" placeholder="password"></asp:TextBox>
        
         <label for="inputEmail" class="sr-only">نام</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="نام" required autofocus>
+               <asp:TextBox ID="TextBox3" runat="server" placeholder="name"></asp:TextBox>
       
-           <label for="inputEmail" class="sr-only">تاریخ تولد</label>
-        <input type="date" id="inputEmail" class="form-control" placeholder="تاریخ تولد" required autofocus>
          
-           <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> عضویت در خبرنامه
-          </label>
-        </div>
-           <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> مرا به خاطرت نگه دار
-          </label>
-               <hr />
-                 <label>
+              <div class="checkbox">
+                  <label>
+                      <input type="checkbox" value="remember-me">
+                      عضویت در خبرنامه
+                  </label>
+              </div>
+              <div class="checkbox">
+                  <label>
+                      <input type="checkbox" value="remember-me">
+                      مرا به خاطرت نگه دار
+                  </label>
+                  <hr />
+                  <label>
            
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="button" onclick="myfunction1()">ثبت نام</button>
 
               </span>
-      </form>
+        </form>
 
     </div> <!-- /container -->
 
