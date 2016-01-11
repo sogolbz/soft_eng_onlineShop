@@ -1,0 +1,286 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductDescription.aspx.cs" Inherits="OnlineShop.ProductDescription" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Portfolio Item - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/portfolio-item.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link href="bootstrap-rtl.min.css" rel="stylesheet" />
+    <script src="JQuery.js"></script>
+    <script>
+        //function myfunc() {
+        //    window.alert("hi");
+
+        //    var node = document.createElement("P");                 // Create a <> node
+        //    var textnode = document.createTextNode(document.getElementById('ProId').innerHTML);         // Create a text node
+        //    node.appendChild(textnode);                              // Append the text to <li>
+        //    document.getElementById("panel1").appendChild(node);
+
+        //}
+        $(document).ready(function () {
+       
+            $('#AddToL').click(function () {
+              
+                  var node = document.createElement("P");
+               
+               // var node = $("<p class='list-group-item'></p>").text(document.getElementById('ProId').innerHTML);
+                var textnode = document.createTextNode(document.getElementById('ProId').innerHTML);         // Create a text node
+                   node.appendChild(textnode);                              // Append the text to <li>
+                   // document.getElementById("panel1").appendChild(node);
+                
+                document.getElementById("PanelCart").appendChild(node);
+
+
+            });
+
+
+
+
+            $("#flip1").click(function () {
+                $("#panel1").slideToggle("slow");
+            });
+
+            $("#Cart").click(function () {
+                if (document.getElementById("CartInnerH").innerHTML == "سبد خرید شما -") {
+
+                    $("#PanelCart").slideToggle("slow");
+                    document.getElementById("CartInnerH").innerHTML = "سبد خرید شما +";
+
+
+                }
+                else {
+
+                    $("#PanelCart").slideToggle("slow");
+                    document.getElementById("CartInnerH").innerHTML = "سبد خرید شما -";
+
+                }
+            });//////
+            $("#flip").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+
+
+        });
+     
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">آن شاپ</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="About.aspx">درباره ما</a>
+                    </li>
+                  
+                    <li>
+                        <a href="ContactUs.aspx">تماس با ما</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">نام و مدل محصول
+                    
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+
+            <div class="col-md-8">
+                <img class="img-responsive" src="http://file.digikala.com/Digikala/Image/Webstore/Product/P_102706/180/Tablet-Microsoft-Surface-3-4G-with-Keyboard-128GB73319c.jpg" alt="">
+            </div>
+
+            <div class="col-md-4">
+                <h3>ویژگی ها:</h3>
+                <p id="ProId"> سرفیس پرو2  </p>
+                <p> اندازه صفحه: 10 اینچ  </p>
+                <p> حافظه رم: 8 گیگ </p>
+                <p> پردازنده : نسل پنجم  </p>
+                <p> قیمت :2000000 </p>
+                <p>موجود<input type="checkbox" /></p>
+                <h3>مزایا</h3>
+                <ul>
+                    <li> دوام شارژ باتری</li>
+                    <li> سبک بودن</li>
+                    <hr />
+                    <li> <div class="col-sm-4 col-lg-4 col-md-4">
+
+                        <div class="btn btn-primary" id="AddToL" target="_blank" onclick="myfunc()"  >خرید محصول</div>
+                    </div></li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Related Projects Row -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">دیگر محصولات این شرکت </h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="ProductDescription.aspx">
+                    <img class="img-responsive portfolio-item" src="http://file.digikala.com/Digikala/Image/Webstore/Product/P_102706/180/Tablet-Microsoft-Surface-3-4G-with-Keyboard-128GB73319c.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="ProductDescription.aspx">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="ProductDescription.aspx">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+          
+
+        </div>
+
+
+
+
+        <div>
+
+                
+              <div id="Cart";style="background-color:#333;"> <p id="CartInnerH" class="lead" style="padding:10px; margin:0; font:700;  color:aqua;color: #fff;
+	text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
+	 'BlackJackRegular'; background-color:#333;">  سبد خرید شما + </p></div> 
+
+
+
+                <div id="PanelCart"; class="list-group" style="display:none;">
+
+                
+                    <p class="list-group-item" id="product1">سرفیس بوک</p>
+                    
+
+                    </div>
+                  <div  class="list-group" >
+                    <span class="list-group-item"> جستجوی ساده<input type="text"/><input type="button" value="بگرد" onclick="location.href = 'BrowseProduct.aspx'" /></span>
+                    <div id="flip" class="list-group-item">جستجوی پیشرفته</div>
+                     <div id="panel" style="display:none" class="list-group-item" style="background-color:#333; color:white; margin:0; padding:0;">
+                         <div><input type="text" /> از قیمت<input type="text" /> تا قیمت</div>
+                        <div>براساس نوع</div>
+                         <div><input type="checkbox" />سیستم عامل اندروید</div>
+                          <div><input type="checkbox" />سیستم عامل IOS</div>
+                          <div><input type="checkbox" />سیستم عامل ویندوز</div>
+                         <hr />
+                         <div>براساس شرکت سازنده</div>
+                         <div><input type="checkbox" />سامسونگ</div>
+                          <div><input type="checkbox" />اپل</div>
+                          <div><input type="checkbox" />اچ تی سی</div>
+                         <hr />
+                             <div>براساس رنگ</div>
+                         <div><input type="checkbox" />مشکی</div>
+                          <div><input type="checkbox" />سفید</div>
+                          <div><input type="checkbox" />آبی</div>
+                         <hr />
+                         <input type="text"/><input type="button" onclick="location.href = 'BrowseProduct.aspx'" value="بگرد" />
+                     </div>
+                </div>
+            
+
+
+  <div style="background-color:#333;"> <p class="lead" style="padding:10px; margin:0; font:700;  color:aqua;color: #fff;
+	text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
+	 'BlackJackRegular'; background-color:#333;"> نظر ها</p></div> 
+                <div class="list-group">
+                    <a  class="list-group-item">کاربر1:خیلی محصول خوبیه</a>
+                    <a  class="list-group-item">کاربر2:منتظر نسل های جدید تر بمونید</a>
+                    
+                    <div id="flip1" class="list-group-item">نظر خود را با ما سهیم شوید</div>
+                     <div id="panel1" style="display:none" class="list-group-item" style="background-color:#333; color:white; margin:0; padding:0;">
+                     
+                         <input type="text"/><input type="button" onclick="location.href='BrowseProduct.aspx'" value="ارسال نظر" />
+                     </div>
+                </div>
+            
+
+        </div>
+
+        <!---------->
+        <div>
+
+
+
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
