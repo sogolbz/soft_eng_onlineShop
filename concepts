@@ -13,3 +13,7 @@ start // services // start-->SQL SERVER(SQL EXPRESS )
 
 6-connection string for desktop:
  public const string ConnectionString = @"Server=.\sqlexpress;Database=OnlineShopDb;;Trusted_Connection=Yes;";
+
+7- connection string for domain:
+public const string ConnectionString = "workstation id=OnlineshopDb.mssql.somee.com;packet size=4096;user id=sogol;pwd=sogol123;data source=ComicsDB.mssql.somee.com;persist security info=False;initial catalog=OnlineshopDb";
+        
