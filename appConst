@@ -1,0 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace OnlineShop
+{
+    public static class AppConsts
+    {
+        public const string ConnectionString = @"Server=.\sqlexpress;Database=OnlineShopDb;;Trusted_Connection=Yes;";
+       // public const string ConnectionString = "workstation id=OnlineshopDb.mssql.somee.com;packet size=4096;user id=sogol;pwd=sogol123;data source=ComicsDB.mssql.somee.com;persist security info=False;initial catalog=OnlineshopDb";
+        //public const string ConnectionString = @"Server=C:\Users\sogol\Desktop\test\OnlineShop\OnlineShop\App_Data;Database=OnlineShopDb;;Trusted_Connection=Yes;";
+
+    }
+}
