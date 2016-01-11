@@ -1,55 +1,62 @@
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignIn.aspx.cs" Inherits="OnlineShop.WebForm1" %>
 
-namespace OnlineShop
-{
-    public partial class WebForm1 : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+<!DOCTYPE html>
 
-        }
-            protected void Unnamed1_Click1(object sender, EventArgs e)
-        {
-                
-            var conn = new SqlConnection(AppConsts.ConnectionString);
-            conn.Open();
-            string query = "Select UsrEmail, UsrPassword from Users where UsrEmail='" + email.Text + "' and UsrPassword = '" + pass.Text + "'";
-            var command = new SqlCommand(query, conn);
-            
-            using(var reader =  command.ExecuteReader())
-            {
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-                //while(reader.Read())
-                //{
-                //    string name = reader.GetString(1);
-                //}
-              //  command.ExecuteNonQuery();
+    <title>Signin</title>
 
-                if (reader.Read())
-                {
-                    var usrData = new UserData();
-                    usrData.Email = email.Text;
-                    Session["UserData"] = usrData;
-                    //user data is valid
-                    Response.Redirect(@".\UserDashboard.aspx" , true);
-                }
-                else
-                {
-                    lblError.Text = "Invalid username and password.";
-                    lblError.Visible = true;
-                }
-            }
-        }
-    }
-    public class UserData
-    {
-        public string Email { set; get; }
-        public string Name { set; get; }
-    }
-}
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="bootstrap-rtl.min.css" rel="stylesheet" />
+      <link href="signin.css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <div class="container">
+
+        <form id="form1" runat="server">
+        <h2 class="form-signin-heading">به حساب کاربری خود وارد شوید
+            <asp:Label ID="lblError" runat="server" ForeColor="Red" Text="Label" Visible="False"></asp:Label>
+            </h2>
+        <label for="inputEmail" class="sr-only" >آدرس ایمیل</label>
+        <asp:TextBox  id="email" type="email" name="email" class="form-control" placeholder="ایمیل"  runat="server"/>
+        <label for="inputPassword" class="sr-only">گذرواژه</label>
+        <asp:TextBox  id="pass" type="password" name="pass" class="form-control" placeholder="گذرواژه"  runat="server"/>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> مرا به خاطرت نگه دار
+          </label>
+        </div>
+        <asp:Button class="btn btn-lg btn-primary btn-block" type="submit"  runat="server" name="BtnLogIn"  Text="ورود" OnClick="Unnamed1_Click1"/>
+        </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
