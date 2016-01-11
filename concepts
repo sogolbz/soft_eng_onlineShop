@@ -11,3 +11,5 @@ start // services // start-->SQL SERVER(SQL EXPRESS )
 
 5-url: soshaonshop.somee.com
 
+6-connection string for desktop:
+ public const string ConnectionString = @"Server=.\sqlexpress;Database=OnlineShopDb;;Trusted_Connection=Yes;";
